@@ -14,12 +14,18 @@ class EncoderLL
 {
     public:
         EncoderLL(gpio_num_t pinA, gpio_num_t pinB);
-        void initialize();
+        void initialize(void);
         void setFilterInNanoseconds(uint32_t nanoseconds);
-        int getCount();
-        void resetCount();
+        int getCount(void);
+        void reset(void);
+        void stop(void);
+        void enable(void);
+        void disable(void);
+        void start(void);
+
         const gpio_num_t aPinNumber;
         const gpio_num_t bPinNumber;
+
     private:
         pcnt_unit_config_t enc_unit_config;
         pcnt_unit_handle_t enc_unit_handler;

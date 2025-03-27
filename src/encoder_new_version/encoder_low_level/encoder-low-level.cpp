@@ -34,11 +34,11 @@ void EncoderLL::initialize()
 
     setFilterInNanoseconds(DEFAULT_NS_FILTER);
 
-    pcnt_unit_enable(enc_unit_handler);
+    enable();
 
-    pcnt_unit_clear_count(enc_unit_handler);
+    reset();
 
-    pcnt_unit_start(enc_unit_handler);
+    start();
 }
 
 void EncoderLL::setFilterInNanoseconds(uint32_t nanoseconds)
@@ -56,7 +56,27 @@ int EncoderLL::getCount()
     return counts;
 }
 
-void EncoderLL::resetCount()
+void EncoderLL::reset()
 {
     ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_unit_clear_count(enc_unit_handler));
+}
+
+void EncoderLL::stop()
+{
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_unit_stop(enc_unit_handler));
+}
+
+void EncoderLL::enable()
+{
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_unit_enable(enc_unit_handler));
+}
+
+void EncoderLL::disable()
+{
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_unit_disable(enc_unit_handler));
+}
+
+void EncoderLL::start()
+{
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_unit_start(enc_unit_handler));
 }
