@@ -1,8 +1,23 @@
 #include "encoder-low-level.h"
 
 
-EncoderLL::EncoderLL(gpio_num_t pinA, gpio_num_t pinB) : aPinNumber(pinA), bPinNumber(pinB)
+EncoderLL::EncoderLL()
 {
+
+}
+
+EncoderLL::~EncoderLL()
+{
+    pcnt_del_unit(enc_unit_handler);
+    pcnt_del_channel(enc_channel_A_handler);
+    pcnt_del_channel(enc_channel_B_handler);
+}
+
+void EncoderLL::initialize(gpio_num_t pinA, gpio_num_t pinB)
+{
+    aPinNumber = pinA;
+    bPinNumber = pinB;
+
     gpio_pad_select_gpio(aPinNumber);
     gpio_pad_select_gpio(bPinNumber);
 
@@ -12,13 +27,9 @@ EncoderLL::EncoderLL(gpio_num_t pinA, gpio_num_t pinB) : aPinNumber(pinA), bPinN
     ESP_ERROR_CHECK_WITHOUT_ABORT(gpio_pulldown_en(aPinNumber));
     ESP_ERROR_CHECK_WITHOUT_ABORT(gpio_pulldown_en(bPinNumber));
 
-    initialize();
-}
-
-void EncoderLL::initialize()
-{
     enc_unit_config.high_limit = UPPER_LIMIT;
     enc_unit_config.low_limit = LOWER_LIMIT;
+    enc_unit_config.flags.accum_count = ACCUM;
 
     ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_new_unit(&enc_unit_config, &enc_unit_handler));
 
@@ -31,6 +42,12 @@ void EncoderLL::initialize()
     enc_channel_B_config.level_gpio_num = aPinNumber;
 
     ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_new_channel(enc_unit_handler, &enc_channel_B_config, &enc_channel_B_handler));
+
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_channel_set_edge_action(enc_channel_A_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE));
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_channel_set_level_action(enc_channel_A_handler, PCNT_CHANNEL_LEVEL_ACTION_INVERSE, PCNT_CHANNEL_LEVEL_ACTION_KEEP));
+
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_channel_set_edge_action(enc_channel_B_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE));
+    ESP_ERROR_CHECK_WITHOUT_ABORT(pcnt_channel_set_level_action(enc_channel_B_handler, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE));
 
     setFilterInNanoseconds(DEFAULT_NS_FILTER);
 

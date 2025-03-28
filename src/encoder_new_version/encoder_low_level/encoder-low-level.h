@@ -13,8 +13,9 @@
 class EncoderLL
 {
     public:
-        EncoderLL(gpio_num_t pinA, gpio_num_t pinB);
-        void initialize(void);
+        EncoderLL(void);
+        ~EncoderLL();
+        void initialize(gpio_num_t pinA, gpio_num_t pinB);
         void setFilterInNanoseconds(uint32_t nanoseconds);
         int getCount(void);
         void reset(void);
@@ -23,8 +24,8 @@ class EncoderLL
         void disable(void);
         void start(void);
 
-        const gpio_num_t aPinNumber;
-        const gpio_num_t bPinNumber;
+        gpio_num_t aPinNumber;
+        gpio_num_t bPinNumber;
 
     private:
         pcnt_unit_config_t enc_unit_config;
@@ -36,7 +37,7 @@ class EncoderLL
         pcnt_glitch_filter_config_t enc_filter_config;
 
         static const uint32_t DEFAULT_NS_FILTER = 250;
-
+        static const uint32_t ACCUM = 1;
         int counts = 0;
 };
 
