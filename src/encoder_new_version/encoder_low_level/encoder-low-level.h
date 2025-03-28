@@ -7,8 +7,8 @@
 #include <freertos/FreeRTOS.h>
 #include <rom/gpio.h>
 
-#define UPPER_LIMIT 327666;
-#define LOWER_LIMIT -32766;
+#define UPPER_LIMIT 32767;
+#define LOWER_LIMIT -32768;
 
 class EncoderLL
 {
@@ -29,7 +29,7 @@ class EncoderLL
 
     private:
         pcnt_unit_config_t enc_unit_config;
-        pcnt_unit_handle_t enc_unit_handler;
+        pcnt_unit_handle_t enc_unit_handler = NULL;
         pcnt_chan_config_t enc_channel_A_config;
         pcnt_channel_handle_t enc_channel_A_handler = NULL;
         pcnt_chan_config_t enc_channel_B_config;
@@ -38,7 +38,6 @@ class EncoderLL
 
         static const uint32_t DEFAULT_NS_FILTER = 250;
         static const uint32_t ACCUM = 1;
-        int counts = 0;
 };
 
 #endif

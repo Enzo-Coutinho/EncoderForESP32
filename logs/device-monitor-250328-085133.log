@@ -1,0 +1,578 @@
+Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4688
+load:0x40078000,len:15504
+load:0x40080400,len:4
+load:0x40080404,len:3196
+entry 0x400805a4
+E (162) pcnt: pcnt_new_unit(190): invalid limit range:[-32766,327666]
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d19e1
+  #0  0x400d19e1 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:34 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 34
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_unit(&enc_unit_config, &enc_unit_handler)
+E (183) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a04
+  #0  0x400d1a04 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:39 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 39
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_A_config, &enc_channel_A_handler)
+E (216) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a27
+  #0  0x400d1a27 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:44 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 44
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_B_config, &enc_channel_B_handler)
+E (249) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a41
+  #0  0x400d1a41 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:46 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 46
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_A_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (286) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a5b
+  #0  0x400d1a5b in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:47 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 47
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_A_handler, PCNT_CHANNEL_LEVEL_ACTION_INVERSE, PCNT_CHANNEL_LEVEL_ACTION_KEEP)
+E (324) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a75
+  #0  0x400d1a75 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:49 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 49
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_B_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (361) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a8e
+  #0  0x400d1a8e in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:50 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 50
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_B_handler, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE)
+E (399) pcnt: pcnt_unit_set_glitch_filter(344): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18ad
+  #0  0x400d18ad in EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:67 (discriminator 2)
+      (inlined by) EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:61 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 65
+func: void EncoderLL::setFilterInNanoseconds(uint32_t)
+expression: pcnt_unit_set_glitch_filter(enc_unit_handler, &filter_config)
+E (431) pcnt: pcnt_unit_enable(368): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d191d
+  #0  0x400d191d in EncoderLL::enable() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:89 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 89
+func: void EncoderLL::enable()
+expression: pcnt_unit_enable(enc_unit_handler)
+E (458) pcnt: pcnt_unit_clear_count(433): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1901
+  #0  0x400d1901 in EncoderLL::reset() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:79 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 79
+func: void EncoderLL::reset()
+expression: pcnt_unit_clear_count(enc_unit_handler)
+E (485) pcnt: pcnt_unit_start(404): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d193c
+  #0  0x400d193c in EncoderLL::start() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:99 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 99
+func: void EncoderLL::start()
+expression: pcnt_unit_start(enc_unit_handler)
+[   370][D][esp32-hal-cpu.c:263] setCpuFrequencyMhz(): PLL: 480 / 2 = 240 Mhz, APB: 80000000 Hz
+=========== Before Setup Start ===========
+Chip Info:
+------------------------------------------
+  Model             : ESP32
+  Package           : D0WD-Q5
+  Revision          : 3.01
+  Cores             : 2
+  CPU Frequency     : 240 MHz
+  XTAL Frequency    : 40 MHz
+  Features Bitfield : 0x00000032
+  Embedded Flash    : No
+  Embedded PSRAM    : No
+  2.4GHz WiFi       : Yes
+  Classic BT        : Yes
+  BT Low Energy     : Yes
+  IEEE 802.15.4     : No
+------------------------------------------
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   340268 B ( 332.3 KB)
+  Allocated Bytes   :    32680 B (  31.9 KB)
+  Minimum Free Bytes:   334852 B ( 327.0 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+Flash Info:
+------------------------------------------
+  Chip Size         : 16777216 B (16 MB)
+  Block Size        :    65536 B (  64.0 KB)
+  Sector Size       :     4096 B (   4.0 KB)
+  Page Size         :      256 B (   0.2 KB)
+  Bus Speed         : 40 MHz
+  Bus Mode          : DIO
+------------------------------------------
+Partitions Info:
+------------------------------------------
+                nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+            otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+               app0 : addr: 0x00010000, size:  6400.0 KB, type:  APP, subtype: OTA_0
+               app1 : addr: 0x00650000, size:  6400.0 KB, type:  APP, subtype: OTA_1
+             spiffs : addr: 0x00C90000, size:  3456.0 KB, type: DATA, subtype: SPIFFS
+           coredump : addr: 0x00FF0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+------------------------------------------
+Software Info:
+------------------------------------------
+  Compile Date/Time : Mar 28 2025 08:39:08
+  ESP-IDF Version   : v5.3.2-584-g489d7a2b3a-dirty
+  Arduino Version   : 3.1.3
+------------------------------------------
+Board Info:
+------------------------------------------
+  Arduino Board     : Espressif ESP32 Dev Module
+  Arduino Variant   : esp32
+  Core Debug Level  : 4
+  Arduino Runs Core : 1
+  Arduino Events on : 1
+  CDC On Boot       : 0
+============ Before Setup End ============
+=========== After Setup Start ============
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   337884 B ( 330.0 KB)
+  Allocated Bytes   :    34776 B (  34.0 KB)
+  Minimum Free Bytes:   332468 B ( 324.7 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+GPIO Info:
+------------------------------------------
+  GPIO : BUS_TYPE[bus/unit][chan]
+  --------------------------------------  
+     1 : UART_TX[0]
+     3 : UART_RX[0]
+============ After Setup End =============
+E (583) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e5
+  #0  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 73
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+
+abort() was called at PC 0x4008836b on core 1
+
+
+Backtrace: 0x40083171:0x3ffb2110 0x40088375:0x3ffb2130 0x4008ddfd:0x3ffb2150 0x4008836b:0x3ffb21d0 0x400d18e5:0x3ffb2200 0x400d1866:0x3ffb2230 0x400d1ada:0x3ffb2250 0x400d3b84:0x3ffb2270 0x40088d45:0x3ffb2290
+  #0  0x40083171 in panic_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/panic.c:463
+  #1  0x40088375 in esp_system_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/port/esp_system_chip.c:92
+  #2  0x4008ddfd in abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/newlib/abort.c:38
+  #3  0x4008836b in _esp_error_check_failed at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/esp_err.c:49
+  #4  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+  #5  0x400d1866 in Encoder::getPosition() at src/encoder_new_version/Encoder.cpp:22
+  #6  0x400d1ada in loop() at src/main.cpp:11
+  #7  0x400d3b84 in loopTask(void*) at C:/Users/enzo/.platformio/packages/framework-arduinoespressif32@src-702d0f93023d86e22d8ef62aa333f0b7/cores/esp32/main.cpp:74
+  #8  0x40088d45 in vPortTaskWrapper at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+
+
+
+
+ELF file SHA256: d8ab6594e
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4688
+load:0x40078000,len:15504
+load:0x40080400,len:4
+load:0x40080404,len:3196
+entry 0x400805a4
+E (161) pcnt: pcnt_new_unit(190): invalid limit range:[-32766,327666]
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d19e1
+  #0  0x400d19e1 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:34 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 34
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_unit(&enc_unit_config, &enc_unit_handler)
+E (182) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a04
+  #0  0x400d1a04 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:39 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 39
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_A_config, &enc_channel_A_handler)
+E (215) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a27
+  #0  0x400d1a27 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:44 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 44
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_B_config, &enc_channel_B_handler)
+E (248) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a41
+  #0  0x400d1a41 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:46 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 46
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_A_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (286) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a5b
+  #0  0x400d1a5b in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:47 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 47
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_A_handler, PCNT_CHANNEL_LEVEL_ACTION_INVERSE, PCNT_CHANNEL_LEVEL_ACTION_KEEP)
+E (323) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a75
+  #0  0x400d1a75 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:49 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 49
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_B_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (361) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a8e
+  #0  0x400d1a8e in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:50 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 50
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_B_handler, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE)
+E (398) pcnt: pcnt_unit_set_glitch_filter(344): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18ad
+  #0  0x400d18ad in EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:67 (discriminator 2)
+      (inlined by) EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:61 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 65
+func: void EncoderLL::setFilterInNanoseconds(uint32_t)
+expression: pcnt_unit_set_glitch_filter(enc_unit_handler, &filter_config)
+E (430) pcnt: pcnt_unit_enable(368): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d191d
+  #0  0x400d191d in EncoderLL::enable() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:89 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 89
+func: void EncoderLL::enable()
+expression: pcnt_unit_enable(enc_unit_handler)
+E (457) pcnt: pcnt_unit_clear_count(433): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1901
+  #0  0x400d1901 in EncoderLL::reset() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:79 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 79
+func: void EncoderLL::reset()
+expression: pcnt_unit_clear_count(enc_unit_handler)
+E (484) pcnt: pcnt_unit_start(404): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d193c
+  #0  0x400d193c in EncoderLL::start() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:99 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 99
+func: void EncoderLL::start()
+expression: pcnt_unit_start(enc_unit_handler)
+[   370][D][esp32-hal-cpu.c:263] setCpuFrequencyMhz(): PLL: 480 / 2 = 240 Mhz, APB: 80000000 Hz
+=========== Before Setup Start ===========
+Chip Info:
+------------------------------------------
+  Model             : ESP32
+  Package           : D0WD-Q5
+  Revision          : 3.01
+  Cores             : 2
+  CPU Frequency     : 240 MHz
+  XTAL Frequency    : 40 MHz
+  Features Bitfield : 0x00000032
+  Embedded Flash    : No
+  Embedded PSRAM    : No
+  2.4GHz WiFi       : Yes
+  Classic BT        : Yes
+  BT Low Energy     : Yes
+  IEEE 802.15.4     : No
+------------------------------------------
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   340268 B ( 332.3 KB)
+  Allocated Bytes   :    32680 B (  31.9 KB)
+  Minimum Free Bytes:   334852 B ( 327.0 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+Flash Info:
+------------------------------------------
+  Chip Size         : 16777216 B (16 MB)
+  Block Size        :    65536 B (  64.0 KB)
+  Sector Size       :     4096 B (   4.0 KB)
+  Page Size         :      256 B (   0.2 KB)
+  Bus Speed         : 40 MHz
+  Bus Mode          : DIO
+------------------------------------------
+Partitions Info:
+------------------------------------------
+                nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+            otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+               app0 : addr: 0x00010000, size:  6400.0 KB, type:  APP, subtype: OTA_0
+               app1 : addr: 0x00650000, size:  6400.0 KB, type:  APP, subtype: OTA_1
+             spiffs : addr: 0x00C90000, size:  3456.0 KB, type: DATA, subtype: SPIFFS
+           coredump : addr: 0x00FF0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+------------------------------------------
+Software Info:
+------------------------------------------
+  Compile Date/Time : Mar 28 2025 08:39:08
+  ESP-IDF Version   : v5.3.2-584-g489d7a2b3a-dirty
+  Arduino Version   : 3.1.3
+------------------------------------------
+Board Info:
+------------------------------------------
+  Arduino Board     : Espressif ESP32 Dev Module
+  Arduino Variant   : esp32
+  Core Debug Level  : 4
+  Arduino Runs Core : 1
+  Arduino Events on : 1
+  CDC On Boot       : 0
+============ Before Setup End ============
+=========== After Setup Start ============
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   337884 B ( 330.0 KB)
+  Allocated Bytes   :    34776 B (  34.0 KB)
+  Minimum Free Bytes:   332468 B ( 324.7 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+GPIO Info:
+------------------------------------------
+  GPIO : BUS_TYPE[bus/unit][chan]
+  --------------------------------------  
+     1 : UART_TX[0]
+     3 : UART_RX[0]
+============ After Setup End =============
+E (583) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e5
+  #0  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 73
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+
+abort() was called at PC 0x4008836b on core 1
+
+
+Backtrace: 0x40083171:0x3ffb2110 0x40088375:0x3ffb2130 0x4008ddfd:0x3ffb2150 0x4008836b:0x3ffb21d0 0x400d18e5:0x3ffb2200 0x400d1866:0x3ffb2230 0x400d1ada:0x3ffb2250 0x400d3b84:0x3ffb2270 0x40088d45:0x3ffb2290
+  #0  0x40083171 in panic_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/panic.c:463
+  #1  0x40088375 in esp_system_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/port/esp_system_chip.c:92
+  #2  0x4008ddfd in abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/newlib/abort.c:38
+  #3  0x4008836b in _esp_error_check_failed at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/esp_err.c:49
+  #4  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+  #5  0x400d1866 in Encoder::getPosition() at src/encoder_new_version/Encoder.cpp:22
+  #6  0x400d1ada in loop() at src/main.cpp:11
+  #7  0x400d3b84 in loopTask(void*) at C:/Users/enzo/.platformio/packages/framework-arduinoespressif32@src-702d0f93023d86e22d8ef62aa333f0b7/cores/esp32/main.cpp:74
+  #8  0x40088d45 in vPortTaskWrapper at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+
+
+
+
+ELF file SHA256: d8ab6594e
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4688
+load:0x40078000,len:15504
+load:0x40080400,len:4
+load:0x40080404,len:3196
+entry 0x400805a4
+E (161) pcnt: pcnt_new_unit(190): invalid limit range:[-32766,327666]
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d19e1
+  #0  0x400d19e1 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:34 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 34
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_unit(&enc_unit_config, &enc_unit_handler)
+E (182) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a04
+  #0  0x400d1a04 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:39 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 39
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_A_config, &enc_channel_A_handler)
+E (215) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a27
+  #0  0x400d1a27 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:44 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 44
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_B_config, &enc_channel_B_handler)
+E (248) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a41
+  #0  0x400d1a41 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:46 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 46
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_A_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (286) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a5b
+  #0  0x400d1a5b in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:47 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 47
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_A_handler, PCNT_CHANNEL_LEVEL_ACTION_INVERSE, PCNT_CHANNEL_LEVEL_ACTION_KEEP)
+E (323) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a75
+  #0  0x400d1a75 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:49 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 49
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_B_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (361) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a8e
+  #0  0x400d1a8e in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:50 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 50
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_B_handler, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE)
+E (398) pcnt: pcnt_unit_set_glitch_filter(344): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18ad
+  #0  0x400d18ad in EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:67 (discriminator 2)
+      (inlined by) EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:61 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 65
+func: void EncoderLL::setFilterInNanoseconds(uint32_t)
+expression: pcnt_unit_set_glitch_filter(enc_unit_handler, &filter_config)
+E (430) pcnt: pcnt_unit_enable(368): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d191d
+  #0  0x400d191d in EncoderLL::enable() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:89 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 89
+func: void EncoderLL::enable()
+expression: pcnt_unit_enable(enc_unit_handler)
+E (457) pcnt: pcnt_unit_clear_count(433): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1901
+  #0  0x400d1901 in EncoderLL::reset() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:79 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 79
+func: void EncoderLL::reset()
+expression: pcnt_unit_clear_count(enc_unit_handler)
+E (484) pcnt: pcnt_unit_start(404): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d193c
+  #0  0x400d193c in EncoderLL::start() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:99 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 99
+func: void EncoderLL::start()
+expression: pcnt_unit_start(enc_unit_handler)
+[   370][D][esp32-hal-cpu.c:263] setCpuFrequencyMhz(): PLL: 480 / 2 = 240 Mhz, APB: 80000000 Hz
+=========== Before Setup Start ===========
+Chip Info:
+------------------------------------------
+  Model             : ESP32
+  Package           : D0WD-Q5
+  Revision          : 3.01
+  Cores             : 2
+  CPU Frequency     : 240 MHz
+  XTAL Frequency    : 40 MHz
+  Features Bitfield : 0x00000032
+  Embedded Flash    : No
+  Embedded PSRAM    : No
+  2.4GHz WiFi       : Yes
+  Classic BT        : Yes
+  BT Low Energy     : Yes
+  IEEE 802.15.4     : No
+------------------------------------------
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   340268 B ( 332.3 KB)
+  Allocated Bytes   :    32680 B (  31.9 KB)
+  Minimum Free Bytes:   334852 B ( 327.0 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+Flash Info:
+------------------------------------------
+  Chip Size         : 16777216 B (16 MB)
+  Block Size        :    65536 B (  64.0 KB)
+  Sector Size       :     4096 B (   4.0 KB)
+  Page Size         :      256 B (   0.2 KB)
+  Bus Speed         : 40 MHz
+  Bus Mode          : DIO
+------------------------------------------
+Partitions Info:
+------------------------------------------
+                nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+            otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+               app0 : addr: 0x00010000, size:  6400.0 KB, type:  APP, subtype: OTA_0
+               app1 : addr: 0x00650000, size:  6400.0 KB, type:  APP, subtype: OTA_1
+             spiffs : addr: 0x00C90000, size:  3456.0 KB, type: DATA, subtype: SPIFFS
+           coredump : addr: 0x00FF0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+------------------------------------------
+Software Info:
+------------------------------------------
+  Compile Date/Time : Mar 28 2025 08:39:08
+  ESP-IDF Version   : v5.3.2-584-g489d7a2b3a-dirty
+  Arduino Version   : 3.1.3
+------------------------------------------
+Board Info:
+------------------------------------------
+  Arduino Board     : Espressif ESP32 Dev Module
+  Arduino Variant   : esp32
+  Core Debug Level  : 4
+  Arduino Runs Core : 1
+  Arduino Events on : 1
+  CDC On Boot       : 0
+============ Before Setup End ============
+=========== After Setup Start ============
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380232 B ( 371.3 KB)
+  Free Bytes        :   337884 B ( 330.0 KB)
+  Allocated Bytes   :    34776 B (  34.0 KB)
+  Minimum Free Bytes:   332468 B ( 324.7 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+GPIO Info:
+------------------------------------------
+  GPIO : BUS_TYPE[bus/unit][chan]
+  --------------------------------------  
+     1 : UART_TX[0]
+     3 : UART_RX[0]
+============ After Setup End =============
+E (583) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e5
+  #0  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 73
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+
+abort() was called at PC 0x4008836b on core 1
+
+
+Backtrace: 0x40083171:0x3ffb2110 0x40088375:0x3ffb2130 0x4008ddfd:0x3ffb2150 0x4008836b:0x3ffb21d0 0x400d18e5:0x3ffb2200 0x400d1866:0x3ffb2230 0x400d1ada:0x3ffb2250 0x400d3b84:0x3ffb2270 0x40088d45:0x3ffb2290
+  #0  0x40083171 in panic_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/panic.c:463
+  #1  0x40088375 in esp_system_abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/port/esp_system_chip.c:92
+  #2  0x4008ddfd in abort at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/newlib/abort.c:38
+  #3  0x4008836b in _esp_error_check_failed at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/esp_system/esp_err.c:49
+  #4  0x400d18e5 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:73 (discriminator 2)
+  #5  0x400d1866 in Encoder::getPosition() at src/encoder_new_version/Encoder.cpp:22
+  #6  0x400d1ada in loop() at src/main.cpp:11
+  #7  0x400d3b84 in loopTask(void*) at C:/Users/enzo/.platformio/packages/framework-arduinoespressif32@src-702d0f93023d86e22d8ef62aa333f0b7/cores/esp32/main.cpp:74
+  #8  0x40088d45 in vPortTaskWrapper at /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
+
+
+
+
+ELF file SHA256: d8ab6594e
+

@@ -1,0 +1,1869 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:4688
+load:0x40078000,len:15504
+load:0x40080400,len:4
+load:0x40080404,len:3196
+entry 0x400805a4
+E (162) pcnt: pcnt_new_unit(190): invalid limit range:[-32766,327666]
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d19e1
+  #0  0x400d19e1 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:34 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 34
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_unit(&enc_unit_config, &enc_unit_handler)
+E (183) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a04
+  #0  0x400d1a04 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:39 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 39
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_A_config, &enc_channel_A_handler)
+E (216) pcnt: pcnt_new_channel(629): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a27
+  #0  0x400d1a27 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:44 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 44
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_new_channel(enc_unit_handler, &enc_channel_B_config, &enc_channel_B_handler)
+E (249) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a41
+  #0  0x400d1a41 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:46 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 46
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_A_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (286) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a5b
+  #0  0x400d1a5b in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:47 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 47
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_A_handler, PCNT_CHANNEL_LEVEL_ACTION_INVERSE, PCNT_CHANNEL_LEVEL_ACTION_KEEP)
+E (324) pcnt: pcnt_channel_set_edge_action(727): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a75
+  #0  0x400d1a75 in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:49 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 49
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_edge_action(enc_channel_B_handler, PCNT_CHANNEL_EDGE_ACTION_DECREASE, PCNT_CHANNEL_EDGE_ACTION_INCREASE)
+E (361) pcnt: pcnt_channel_set_level_action(742): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1a8e
+  #0  0x400d1a8e in EncoderLL::initialize(gpio_num_t, gpio_num_t) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:50 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 50
+func: void EncoderLL::initialize(gpio_num_t, gpio_num_t)
+expression: pcnt_channel_set_level_action(enc_channel_B_handler, PCNT_CHANNEL_LEVEL_ACTION_KEEP, PCNT_CHANNEL_LEVEL_ACTION_INVERSE)
+E (399) pcnt: pcnt_unit_set_glitch_filter(344): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18ad
+  #0  0x400d18ad in EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:67 (discriminator 2)
+      (inlined by) EncoderLL::setFilterInNanoseconds(unsigned long) at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:61 (discriminator 2)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 65
+func: void EncoderLL::setFilterInNanoseconds(uint32_t)
+expression: pcnt_unit_set_glitch_filter(enc_unit_handler, &filter_config)
+E (431) pcnt: pcnt_unit_enable(368): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d191d
+  #0  0x400d191d in EncoderLL::enable() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:88 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 88
+func: void EncoderLL::enable()
+expression: pcnt_unit_enable(enc_unit_handler)
+E (457) pcnt: pcnt_unit_clear_count(433): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d1901
+  #0  0x400d1901 in EncoderLL::reset() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:78 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 78
+func: void EncoderLL::reset()
+expression: pcnt_unit_clear_count(enc_unit_handler)
+E (485) pcnt: pcnt_unit_start(404): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d193c
+  #0  0x400d193c in EncoderLL::start() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:98 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 98
+func: void EncoderLL::start()
+expression: pcnt_unit_start(enc_unit_handler)
+[   378][D][esp32-hal-cpu.c:263] setCpuFrequencyMhz(): PLL: 480 / 2 = 240 Mhz, APB: 80000000 Hz
+=========== Before Setup Start ===========
+Chip Info:
+------------------------------------------
+  Model             : ESP32
+  Package           : D0WD-Q5
+  Revision          : 3.01
+  Cores             : 2
+  CPU Frequency     : 240 MHz
+  XTAL Frequency    : 40 MHz
+  Features Bitfield : 0x00000032
+  Embedded Flash    : No
+  Embedded PSRAM    : No
+  2.4GHz WiFi       : Yes
+  Classic BT        : Yes
+  BT Low Energy     : Yes
+  IEEE 802.15.4     : No
+------------------------------------------
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380224 B ( 371.3 KB)
+  Free Bytes        :   340260 B ( 332.3 KB)
+  Allocated Bytes   :    32680 B (  31.9 KB)
+  Minimum Free Bytes:   334844 B ( 327.0 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+Flash Info:
+------------------------------------------
+  Chip Size         : 16777216 B (16 MB)
+  Block Size        :    65536 B (  64.0 KB)
+  Sector Size       :     4096 B (   4.0 KB)
+  Page Size         :      256 B (   0.2 KB)
+  Bus Speed         : 40 MHz
+  Bus Mode          : DIO
+------------------------------------------
+Partitions Info:
+------------------------------------------
+                nvs : addr: 0x00009000, size:    20.0 KB, type: DATA, subtype: NVS
+            otadata : addr: 0x0000E000, size:     8.0 KB, type: DATA, subtype: OTA
+               app0 : addr: 0x00010000, size:  6400.0 KB, type:  APP, subtype: OTA_0
+               app1 : addr: 0x00650000, size:  6400.0 KB, type:  APP, subtype: OTA_1
+             spiffs : addr: 0x00C90000, size:  3456.0 KB, type: DATA, subtype: SPIFFS
+           coredump : addr: 0x00FF0000, size:    64.0 KB, type: DATA, subtype: COREDUMP
+------------------------------------------
+Software Info:
+------------------------------------------
+  Compile Date/Time : Mar 28 2025 08:39:08
+  ESP-IDF Version   : v5.3.2-584-g489d7a2b3a-dirty
+  Arduino Version   : 3.1.3
+------------------------------------------
+Board Info:
+------------------------------------------
+  Arduino Board     : Espressif ESP32 Dev Module
+  Arduino Variant   : esp32
+  Core Debug Level  : 4
+  Arduino Runs Core : 1
+  Arduino Events on : 1
+  CDC On Boot       : 0
+============ Before Setup End ============
+=========== After Setup Start ============
+INTERNAL Memory Info:
+------------------------------------------
+  Total Size        :   380224 B ( 371.3 KB)
+  Free Bytes        :   337876 B ( 330.0 KB)
+  Allocated Bytes   :    34776 B (  34.0 KB)
+  Minimum Free Bytes:   332460 B ( 324.7 KB)
+  Largest Free Block:   110580 B ( 108.0 KB)
+------------------------------------------
+GPIO Info:
+------------------------------------------
+  GPIO : BUS_TYPE[bus/unit][chan]
+  --------------------------------------  
+     1 : UART_TX[0]
+     3 : UART_RX[0]
+============ After Setup End =============
+E (583) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (610) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (640) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (671) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (701) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (731) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (761) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (791) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (821) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (852) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (882) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (912) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (942) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (972) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1003) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1033) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1063) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1093) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1124) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1154) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1184) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1214) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1245) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1275) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1305) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1336) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1366) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1396) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1426) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1457) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1487) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1517) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1548) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1578) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1608) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1638) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1669) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1699) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1729) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1759) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1790) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1820) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1850) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1881) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1911) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1941) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (1971) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2002) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2032) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2062) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2092) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2123) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2153) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2183) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2214) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2244) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2274) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2304) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2335) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2365) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2395) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2425) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2456) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2486) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2516) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2547) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2577) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2607) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2637) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2668) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2698) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2728) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2758) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2789) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2819) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2849) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2880) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2910) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2940) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (2970) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3001) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3031) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3061) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3091) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3122) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3152) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3182) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3213) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3243) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3273) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3303) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3334) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3364) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3394) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3424) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3455) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3485) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3515) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3546) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3576) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3606) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3636) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3667) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3697) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3727) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3757) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3788) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3818) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3848) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3879) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3909) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3939) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (3969) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4000) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4030) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4060) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4091) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4121) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4151) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4181) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4212) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4242) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4272) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4302) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4333) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4363) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4393) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4424) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4454) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4484) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4514) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4545) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4575) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4605) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4635) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4666) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4696) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4726) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4757) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4787) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4817) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4847) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4878) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4908) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4938) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4968) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (4999) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5029) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5059) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5090) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5120) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5150) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5180) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5211) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5241) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5271) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5301) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5332) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5362) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5392) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5423) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5453) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5483) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5513) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5544) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5574) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5604) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5634) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5665) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5695) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5725) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5756) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5786) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5816) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5846) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5877) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5907) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5937) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5967) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (5998) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6028) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6058) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6089) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6119) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6149) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6179) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6210) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6240) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6270) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6300) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6331) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6361) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6391) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6422) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6452) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6482) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6512) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6543) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6573) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6603) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6633) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6664) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6694) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6724) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6755) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6785) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6815) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6845) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6876) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6906) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6936) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6967) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (6997) pcnt: pcnt_unit_get_count(452): invalid argument
+ESP_ERROR_CHECK_WITHOUT_ABORT failed: esp_err_t 0x102 (ESP_ERR_INVALID_ARG) at 0x400d18e2
+  #0  0x400d18e2 in EncoderLL::getCount() at src/encoder_new_version/encoder_low_level/encoder-low-level.cpp:72 (discriminator 1)
+
+file: "src/encoder_new_version/encoder_low_level/encoder-low-level.cpp" line 72
+func: int EncoderLL::getCount()
+expression: pcnt_unit_get_count(enc_unit_handler, &counts)
+Encoder position: 0.000000
+E (
